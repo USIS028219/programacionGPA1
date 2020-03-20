@@ -18,3 +18,5 @@ class Conexion{
 }
 
 ?>
+© 2020 GitHub, Inc.
+?>
