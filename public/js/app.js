@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded",event=>{
         e.stopPropagation();
 
         let modulo = e.toElement.dataset.modulo;
-        fetch('public/vistas/docentes/docentes.html').then( resp=>resp.text() ).then(resp=>{
+        fetch('public/vistas/docente/docente.html').then( resp=>resp.text() ).then(resp=>{
             $(`#vista-${modulo}`).innerHTML = resp;
 
             let btnCerrar = $(".close");
