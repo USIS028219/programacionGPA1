@@ -1,3 +1,4 @@
+
 function init(){
     var $ = el => {
         return el.match(/^#/) ? document.querySelector(el) : document.querySelectorAll(el);
