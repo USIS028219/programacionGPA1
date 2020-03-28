@@ -44,4 +44,8 @@ export function modulo(){
         });
     };
     traerDatos('');
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 917cc60443bfb9d5a66e6001838ea4a6ec6701cc
