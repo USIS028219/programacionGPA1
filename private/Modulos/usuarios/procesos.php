@@ -1,46 +1,52 @@
 <?php 
 include('../../Config/Config.php');
-$alumno = new alumno($conexion);
+$usuarios = new usuarios($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
-$alumno->$proceso( $_GET['alumno'] );
-print_r(json_encode($alumno->respuesta));
+$alumno->$proceso( $_GET['usuarios'] );
+print_r(json_encode($usuarios->respuesta));
 
-class alumno{
+class usuarios{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
 
     public function __construct($db){
         $this->db=$db;
     }
-    public function recibirDatos($alumno){
-        $this->datos = json_decode($alumno, true);
+    public function recibirDatos($usuarios){
+        $this->datos = json_decode($usuarios, true);
         $this->validar_datos();
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el codigo del usuarios';
         }
         if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el nombre del usuarios';
         }
-        if( empty($this->datos['direccion']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
+        if( empty($this->datos['apellido']) ){
+            $this->respuesta['msg'] = 'por favor ingrese la direccion del usuarios';
         }
-        $this->almacenar_alumno();
+        $this->almacenar_usuarios();
     }
-    private function almacenar_alumno(){
+    private function almacenar_usuarios(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO alumnos (codigo,nombre,direccion,telefono) VALUES(
+                    INSERT INTO perfil_de_usuario (codigo,nombre, apellido,genero,estatus,fecha_de_nacimiento, dui, nit, usuario contraseña) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
-                        "'. $this->datos['direccion'] .'",
-                        "'. $this->datos['telefono'] .'"
+                        "'. $this->datos['apellido'] .'",
+                        "'. $this->datos['genero'] .'"
+                        "'. $this->datos['estatus'] .'"
+                        "'. $this->datos['fecha_de_nacimiento'] .'"
+                        "'. $this->datos['dui'] .'"
+                        "'. $this->datos['nit'] .'"
+                        "'. $this->datos['usuario'] .'"
+                        "'. $this->datos['contraseña'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
