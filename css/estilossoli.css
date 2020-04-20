@@ -15,12 +15,12 @@
     max-width: 500px;
     padding: 40px;
     margin: auto;
-    background: #fff;
+    background: white;
     box-shadow: 0px 0px 3px grey; }
   
   .contenedor-formulario {
     width: 100%;
-    color: #f2f2f2;
+    color: blue;
     padding: 50px; }
     .contenedor-formulario .formulario {
       width: 100%;

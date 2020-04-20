@@ -2,40 +2,45 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="estilopuesto.css">
-
-	
-	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/estilossoli.css">
+	<title>Formularios</title>
 </head>
 <body>
 	
-	<div class="contenedor-puesto">
+	<div class="contenedor-formulario">
 		<div class="wrap">
-
-			<form action="" class="puesto" name="formularios_puestoo" method="get">
-			<div>
-				<div class="input-gruop">
-					<label for="codigo">inserte codigo </label>
-					<input type="password" name="codigo" id="codigo" required>
+			<form action="" class="formulario" name="formulario_registro" method="get">
+				<div>
+					 <label class="label" for="codigosoli" aria-required="">solicitud </label>
+					<div class="input-group">
+						<input type="text" id="codigosoli" name="codigosolicitud">
+						
+					</div>
+					<label class="label" for="ccodigoperfil" aria-required=""> perfil</label>	
+					<div class="input-group">
+						<input type="email" id="ccodigoperfil" name="codigoperfil">
+						
+					</div>
 				
+					<div class="input-group radio">
+						<input type="radio" name="educacion" id="parvularia" value="parvularia">
+						<label for="parvularia">educacion parvularia</label>
+						<input type="radio" name="educacion" id="basica" value="basica">
+						<label for="basica">educacion basica</label>
+					</div>
+					<center><div class="input-group radio">
+						<input type="radio" name="educacion" id="media" value="media">
+						<label for="media">educacion media</label>
+					</div></center>
+				
+						
+					<input type="submit" id="btn-submit" value="Enviar">
 				</div>
-			</div>
-			<div class="input-gruop">
-				<label for="codigo">inserte  anterior</label>
-				<input type="password" name="codigo" id="codigo" required>
-			
-			</div>
+			</form>
 		</div>
-		 <center><input type="submit" id="btn-submit" value="enviar"></center>
-
-		</form>
-
-
-
-
-		</div>
-		
 	</div>
+
+	<script src="js/formulario.js"></script>
 </body>
 </html>
