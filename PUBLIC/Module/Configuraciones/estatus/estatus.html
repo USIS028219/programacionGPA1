@@ -1,0 +1,42 @@
+<form v-on:submit.prevent="guardarEstatus" method="get" id="frmEstatus" data-accion="nuevo">
+
+    <div class="card text-white bg-info mb-3" style="width: 100%;">
+        <div class="card-header text-center">
+            <h2>REGISTRO DE estatus</h2>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    Estatus
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="Estatus.Nombre" name="" placeholder="Ingrese su nombre" id="">
+                </div>
+            </div>
+            <div class="row p-2"> 
+                <div class="col-12 text-center">
+                    <input type="submit" class="btn btn-outline-success text-white" value="Guardar">
+                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                  
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ Estatus.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        </form>
+        
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./PUBLIC/Module/Configuraciones/Estatus/Estatus.js"></script>
