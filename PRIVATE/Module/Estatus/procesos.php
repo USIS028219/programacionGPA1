@@ -2,7 +2,7 @@
  
     include('../../Config/Config.php');
 
-    $Puestos = new estatus($conexion);
+    $Puestos = new Estatus($conexion);
 
     $proceso = '';
 
@@ -10,7 +10,7 @@
         $proceso = $_GET['proceso'];
     }
 
-    $Puestos->$proceso($_GET['Puestos']);
+    $Estatus->$proceso($_GET['Puestos']);
  
     print_r(json_encode($Estatus->respuesta));
 
