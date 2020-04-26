@@ -2,7 +2,7 @@
  
     include('../../Config/Config.php');
 
-    $Puestos = new Estatus($conexion);
+    $Estatus = new Estatus($conexion);
 
     $proceso = '';
 
@@ -15,7 +15,7 @@
     print_r(json_encode($Estatus->respuesta));
 
 
-    class Puestos{
+    class Estatus{
 
         private $datos = array(), $db;
         public $respuesta = ['msg' => 'correcto'];
