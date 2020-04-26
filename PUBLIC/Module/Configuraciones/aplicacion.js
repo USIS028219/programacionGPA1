@@ -1,7 +1,7 @@
 $("#Mostrar-Sub-Contenidos").hide("fold", "slow");
 
   setTimeout(function () {
-    $("#Mostrar-Sub-Contenidos").load(`PUBLIC/Module/Configuraciones/estatus/estatus.html`, function() {
+    $("#Mostrar-Sub-Contenidos").load(`PUBLIC/Module/estatus/estatus/estatus.html`, function() {
     
     }).show("scale", "slow");
   },1500);
