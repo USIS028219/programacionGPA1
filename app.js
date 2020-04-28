@@ -7,12 +7,6 @@ document.addEventListener("DOMContentLoadead",e=>{
         a =document.querySelector("#cboa").value,
         cantidad =document.querySelector("#txtcantidadconversores").value,
         opcion = document.getElementById('cboConvertir');
-        let monedas = {
-            "dolar":1,
-            "euro":0.93,
-            "quetzal":7.63,
-            "lempira":24.9,
-            "cordoba":34.19},
             longitudes = {
               "mm": 1000,
               "cm": 100,
